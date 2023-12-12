@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('blog_content');
             $table->string('tag');
             $table->string('date');
-            $table->string('status')->default('active');
+            $table->string('status')->default('enable');
             $table->timestamps();
         });
     }

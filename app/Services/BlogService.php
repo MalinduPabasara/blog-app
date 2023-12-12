@@ -6,7 +6,7 @@ use App\Models\Blog;
 use Illuminate\Http\Request;
 use Prewk\Result;
 
-class CustomerService
+class BlogService
 {
     /**
      * @param Request $request
@@ -28,6 +28,7 @@ class CustomerService
 
     public function updateBlog(Request $request, $id)
     {
+
         $blog = Blog::find($id);
 
         $blog->title = $request->title;
@@ -37,7 +38,7 @@ class CustomerService
         $blog->status = $request->status;
 
         $blog->save();
-
+        
         return $blog;
     }
 }

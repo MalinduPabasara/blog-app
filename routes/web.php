@@ -19,8 +19,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return redirect()->route('getAllBlog');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
@@ -30,11 +32,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/blog', [BlogController::class, 'index'])->name('getAllBlog');
     Route::post('/blog', [BlogController::class, 'store'])->name('addBlog');
-    Route::delete('/blog/{id}', [BlogController::class, 'destroy'])->name('deleteBlog');
+    Route::get('/blog/{id}', [BlogController::class, 'destroy'])->name('deleteBlog');
     Route::post('/blog/update/{id}', [BlogController::class, 'update'])->name('updateBlog');
+    Route::get('/blog/update/view/{id}', [BlogController::class, 'updateView'])->name('update.blog');
     Route::post('/blog/disable/{id}', [BlogController::class, 'disable'])->name('disableBlog');
 });
-
 
 
 require __DIR__.'/auth.php';

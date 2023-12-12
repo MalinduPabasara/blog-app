@@ -31,38 +31,42 @@
         </div>
 
         <div class="mx-4 card">
-            <div class="row">
+            <form method="POST" action="{{ route('addBlog') }}" enctype="multipart/form-data">
+                @csrf
+                <div class="row">
 
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="title" name="title" required>
-
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Date</label>
-                            <input type="date" class="form-control" id="date" name="date" required>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="card-body">
-                        <div class="mb-3">
-                            <label for="exampleFormControlInput1" class="form-label">Tag</label>
-                            <input type="text" class="form-control" id="tag" name="tag" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Blog Content</label>
-                            <textarea class="form-control" id="blog_content" name="blog_content" rows="3" required></textarea>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                                <input type="text" class="form-control" id="title" name="title" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Date</label>
+                                <input type="date" class="form-control" id="date" name="date" required>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-            </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <div class="mb-3">
+                                <label for="exampleFormControlInput1" class="form-label">Tag</label>
+                                <input type="text" class="form-control" id="tag" name="tag" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleFormControlTextarea1" class="form-label">Blog Content</label>
+                                <textarea class="form-control" id="blog_content" name="blog_content" rows="3" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button class="btn btn-success my-4 mx-4">Submit</button>
+            </form>
         </div>
+
+
         <div class="my-4 mx-4 card">
             <div class="card-body">
 
@@ -73,10 +77,33 @@
                             <th>Content</th>
                             <th>Date</th>
                             <th>Tag</th>
+                            <th>Status</th>
+                            <th></th>
+                            <th></th>
+                          
                         </tr>
                     </thead>
                     <tbody>
-                        
+                        @foreach ($bogls as $blog)
+                        <tr>
+                            <td>{{ $blog->title }}</td>
+                            <td>{{ $blog->blog_content }}</td>
+                            <td>{{ $blog->date }}</td>
+                            <td>{{ $blog->tag }}</td>
+                            <td>{{ $blog->status }}</td>
+                            <td>
+                                <a class="py-2 px-5"
+                                    href="{{ route('update.blog', ['id' => $blog->id]) }}"><i
+                                        class="fas fa-download">Update</i></a>
+                            </td>
+                            <td>
+                                <a class="py-2 px-5 text-danger"
+                                    href="{{ route('deleteBlog', ['id' => $blog->id]) }}"><i
+                                        class="fas fa-trash">Delete</i></a>
+                            </td>
+                            
+                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
 
