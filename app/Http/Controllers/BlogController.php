@@ -63,9 +63,11 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show( $id)
     {
-        //
+        $post = Blog::find($id);
+
+        return response()->json($post);
     }
 
     /**

@@ -19,8 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Route::get('/dashboard', function () {
     return redirect()->route('getAllBlog');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -36,7 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/blog/update/{id}', [BlogController::class, 'update'])->name('updateBlog');
     Route::get('/blog/update/view/{id}', [BlogController::class, 'updateView'])->name('update.blog');
     Route::post('/blog/disable/{id}', [BlogController::class, 'disable'])->name('disableBlog');
+    Route::get('/blog/view/{id}', [BlogController::class, 'show'])->name('viewBlog');
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
