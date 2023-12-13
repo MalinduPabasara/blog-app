@@ -71,7 +71,7 @@ Then run the Breeze installation command:
 
 php artisan breeze:install
 
-## Running the Application
+## **Running the Application**
 
 php artisan serve
 
