@@ -60,7 +60,7 @@ Laravel Blog app is a web application built with Laravel, a web application fram
 
 ## Laravel Breeze
 
-Your Project Name uses Laravel Breeze for authentication. Breeze provides a simple and minimalistic starter kit for Laravel.
+Laravel Blog Application uses Laravel Breeze for authentication. Breeze provides a simple and minimalistic starter kit for Laravel.
 
 To install Breeze, run the following command:
 
