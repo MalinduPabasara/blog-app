@@ -22,21 +22,20 @@ class BlogController extends Controller
         $this->blogService = $blogService;
     }
 
+
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $result = Blog::all();
 
         return view('dashboard', ['bogls' => $result]);
-
-        // return response()->json($result);
     }
 
     public function getAllBlogData()
     {
-        $result = Blog::all();
+        $result = Blog::paginate(10);
 
         return response()->json($result);
     }
@@ -56,14 +55,13 @@ class BlogController extends Controller
 
         $result = $this->blogService->addBlog($request);
 
-        return back();
-        // return response()->json($result);
+        return response()->json($result);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show( $id)
+    public function show($id)
     {
         $post = Blog::find($id);
 
@@ -75,7 +73,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
         $request->validate([
             'title' => 'required|string',
             'blog_content' => 'required',
@@ -83,28 +81,28 @@ class BlogController extends Controller
             'date' => 'required',
             'status' => 'required'
         ]);
-        
+
         $result = $this->blogService->updateBlog($request, $id);
 
-        return back();
-
+        return response()->json($result);
     }
 
-    public function updateView($id) {
-        
-        return view('update',['id'=>$id]);
+    public function updateView($id)
+    {
+
+        return view('update', ['id' => $id]);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $post = Blog::find($id);
 
         $post->delete();
 
-        return response()->json(['message' => 'Blog Deleted'], 201);
+        return response()->json(['message' => 'Blog Deleted Id->' . $post->id], 201);
     }
 
     public function disable(Request $request, $id)
@@ -115,16 +113,6 @@ class BlogController extends Controller
 
         $blog->save();
 
-        // return response()->json(['message' => 'Status Updated'], 201);
-
-        // return back();
-
-        // Check if the request is coming from Postman
-        if ($request->header('User-Agent') === 'PostmanRuntime/7.26.5') {
-            return response()->json(['message' => 'Status Updated'], 201);
-        }
-
-        // For other requests (web application), return back
-        return back();
+        return response()->json(['message' => 'Status Updated'], 201);
     }
 }

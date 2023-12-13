@@ -29,6 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/blog', [BlogController::class, 'index'])->name('getAllBlog');
+    Route::get('/blog/all', [BlogController::class, 'getAllBlogData']);
     Route::post('/blog', [BlogController::class, 'store'])->name('addBlog');
     Route::get('/blog/{id}', [BlogController::class, 'destroy'])->name('deleteBlog');
     Route::post('/blog/update/{id}', [BlogController::class, 'update'])->name('updateBlog');
