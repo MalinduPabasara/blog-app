@@ -82,6 +82,11 @@ Visit http://localhost:8000 in your browser.
 
 Thank you for considering contributing to Laravel Blog Application! The contribution guide can be found in the Laravel documentation.
 
+## Documentation
+
+The Laravel Blog Application Documentation can be found here, http://127.0.0.1:8000/docs
+
+
 ## Code of Conduct
 
 Please review and abide by the Code of Conduct.
