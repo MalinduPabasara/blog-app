@@ -86,10 +86,11 @@ Thank you for considering contributing to Laravel Blog Application! The contribu
 ```bash
 Please review and abide by the Code of Conduct.
 ```
-##Security Vulnerabilities
+## Security Vulnerabilities
 ```bash
 If you discover a security vulnerability within Laravel Blog Application, please send an e-mail to info.malindu4@email.com.
 ```
-##License
-
+## License
+```bash
 Laravel Blog Application is open-sourced software licensed under the MIT license.
+```
