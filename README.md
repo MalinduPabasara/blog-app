@@ -79,18 +79,18 @@ php artisan serve
 Visit http://localhost:8000 in your browser.
 
 ## Contributing
-```bash
+
 Thank you for considering contributing to Laravel Blog Application! The contribution guide can be found in the Laravel documentation.
-```
+
 ## Code of Conduct
-```bash
+
 Please review and abide by the Code of Conduct.
-```
+
 ## Security Vulnerabilities
-```bash
+
 If you discover a security vulnerability within Laravel Blog Application, please send an e-mail to info.malindu4@email.com.
-```
+
 ## License
-```bash
+
 Laravel Blog Application is open-sourced software licensed under the MIT license.
-```
+
