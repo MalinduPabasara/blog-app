@@ -84,11 +84,8 @@ Thank you for considering contributing to Laravel Blog Application! The contribu
 
 ## Documentation
 
-The Laravel Blog Application Documentation can be fount here,
+The Laravel Blog Application Documentation can be found here, http://127.0.0.1:8000/docs
 
-```bash
-http://127.0.0.1:8000/docs
-```
 
 ## Code of Conduct
 
