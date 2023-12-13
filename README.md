@@ -66,29 +66,30 @@ To install Breeze, run the following command:
 
 ```bash
 composer require laravel/breeze --dev
-
+```
 Then run the Breeze installation command:
-
+```bash
 php artisan breeze:install
+```
 
-## **Running the Application**
-
+## Running the Application
+```bash
 php artisan serve
-
+```
 Visit http://localhost:8000 in your browser.
 
 ## Contributing
-
+```bash
 Thank you for considering contributing to Laravel Blog Application! The contribution guide can be found in the Laravel documentation.
-
+```
 ## Code of Conduct
-
+```bash
 Please review and abide by the Code of Conduct.
-
+```
 ##Security Vulnerabilities
-
+```bash
 If you discover a security vulnerability within Laravel Blog Application, please send an e-mail to info.malindu4@email.com.
-
+```
 ##License
 
 Laravel Blog Application is open-sourced software licensed under the MIT license.
