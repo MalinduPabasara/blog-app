@@ -38,7 +38,7 @@ class BlogService
         $blog->status = $request->status;
 
         $blog->save();
-        
+
         return $blog;
     }
 }

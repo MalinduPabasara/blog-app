@@ -80,29 +80,28 @@
                             <th>Status</th>
                             <th></th>
                             <th></th>
-                          
+
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($bogls as $blog)
-                        <tr>
-                            <td>{{ $blog->title }}</td>
-                            <td>{{ $blog->blog_content }}</td>
-                            <td>{{ $blog->date }}</td>
-                            <td>{{ $blog->tag }}</td>
-                            <td>{{ $blog->status }}</td>
-                            <td>
-                                <a class="py-2 px-5"
-                                    href="{{ route('update.blog', ['id' => $blog->id]) }}"><i
-                                        class="fas fa-download">Update</i></a>
-                            </td>
-                            <td>
-                                <a class="py-2 px-5 text-danger"
-                                    href="{{ route('deleteBlog', ['id' => $blog->id]) }}"><i
-                                        class="fas fa-trash">Delete</i></a>
-                            </td>
-                            
-                        </tr>
+                            <tr>
+                                <td>{{ $blog->title }}</td>
+                                <td>{{ $blog->blog_content }}</td>
+                                <td>{{ $blog->date }}</td>
+                                <td>{{ $blog->tag }}</td>
+                                <td>{{ $blog->status }}</td>
+                                <td>
+                                    <a class="py-2 px-5" href="{{ route('update.blog', ['id' => $blog->id]) }}"><i
+                                            class="fas fa-download">Update</i></a>
+                                </td>
+                                <td>
+                                    <a class="py-2 px-5 text-danger"
+                                        href="{{ route('deleteBlog', ['id' => $blog->id]) }}"><i
+                                            class="fas fa-trash">Delete</i></a>
+                                </td>
+
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>

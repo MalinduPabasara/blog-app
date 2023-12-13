@@ -15,11 +15,15 @@
 - [Service](#service)
 - [Model](#model)
 -[Postman Collection](#postman-collection)
+-[Database Schema](#database-schema)
+-[Blog Table](#blogs-table)
+
 
 <a name="overview"></a>
 # Overview
 
 This documentation provides details about the structure, API endpoints, and functionality of the Blog web application built with Laravel. The application allows users to manage blog posts.
+
 
 <a name="application-structure"></a>
 # Application Structure
@@ -106,12 +110,54 @@ The `BlogService` class provides the business logic for adding and updating blog
 
 The `Blog` model defines the structure of the `blogs` table in the database. It includes the fields: title, blog_content, tag, date, and status.
 
+<a name="database-schema"></a>
+# Database Schema
+
+The application uses a MySQL database with the following schema:
+
+<a name="blogs-table"></a>
+## Blogs Table
+
+The `blogs` table is created using the following migration:
+
+```php
+public function up(): void
+{
+    Schema::create('blogs', function (Blueprint $table) {
+        $table->id();
+        $table->string('title');
+        $table->string('blog_content');
+        $table->string('tag');
+        $table->string('date');
+        $table->string('status')->default('enable');
+        $table->timestamps();
+    });
+}
+```
+
+  id: The primary key of the table.
+
+  title: The title of the blog post.
+
+  blog_content: The content of the blog post.
+
+  tag: The tag associated with the blog post.
+
+  date: The date of the blog post.
+
+  status: The status of the blog post (default is 'enable').
+
+  timestamps: Automatically managed timestamps for record creation and updates.
+  
+
+  This table is used to store information about blog posts.
+
 <a name="postman-collection"></a>
 # Postman Collection
 
 A Postman collection has been created to facilitate testing and usage of the API.
 
-- [Download Postman Collection File](path/to/your/postman-collection-file.json) (Replace with the actual file path or provide a link to download the collection file.)
+- [Here is the Postman Collection File](https://github.com/MalinduPabasara/blog-app/blob/main/resources/docs/1.0/blog-app.postman_collection.json)
 
 ---
 
